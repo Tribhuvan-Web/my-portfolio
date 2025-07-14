@@ -1,6 +1,22 @@
 import React from "react";
 
 const Achievement = () => {
+  const handleLinkClick = (link, type) => {
+    try {
+      if (type === 'profile') {
+        // External links (profiles)
+        window.open(link, '_blank', 'noopener,noreferrer');
+      } else {
+        // PDF files in public folder
+        window.open(link, '_blank');
+      }
+    } catch (error) {
+      console.error('Error opening link:', error);
+      // Fallback: try direct navigation
+      window.location.href = link;
+    }
+  };
+
   const achievements = [
     {
       id: 1,
@@ -11,9 +27,8 @@ const Achievement = () => {
       year: "2025",
       proof: {
         type: "document", // document, profile, certificate, screenshot
-        link: "/certificates/bca-certificate.pdf", // Replace with actual certificate path
+        link: "/Final result.pdf", // File in public folder
         text: "View Certificate",
-        verificationId: "BCA-2025-69.5"
       },
       icon: (
         <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
@@ -36,9 +51,8 @@ const Achievement = () => {
       year: "2024-2025",
       proof: {
         type: "profile",
-        link: "https://leetcode.com/YOUR_USERNAME", // Replace with your actual LeetCode profile
+        link: "https://leetcode.com/u/Tribhuvan_nath/",
         text: "View Profile",
-        verificationId: "365-Day-Badge"
       },
       icon: (
         <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
@@ -57,9 +71,8 @@ const Achievement = () => {
       year: "2024",
       proof: {
         type: "profile",
-        link: "https://www.hackerrank.com/YOUR_USERNAME", // Replace with your actual HackerRank profile
+        link: "https://www.hackerrank.com/profile/tribhuvannath567",
         text: "View Profile",
-        verificationId: "5-Star-Java"
       },
       icon: (
         <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
@@ -80,7 +93,6 @@ const Achievement = () => {
         type: "certificate",
         link: "/certificates/spring-boot-certificate.pdf", // Replace with actual certificate path
         text: "View Certificate",
-        verificationId: "UC-SPRINGBOOT-2025"
       },
       icon: (
         <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
@@ -103,9 +115,8 @@ const Achievement = () => {
       year: "2024",
       proof: {
         type: "certificate",
-        link: "/certificates/sql-intermediate-certificate.pdf", // Replace with actual certificate path
+        link: "/SQL.pdf", // File in public folder
         text: "View Certificate",
-        verificationId: "HR-SQL-INT-2024"
       },
       icon: (
         <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
@@ -128,9 +139,8 @@ const Achievement = () => {
       year: "2022",
       proof: {
         type: "certificate",
-        link: "https://coursera.org/verify/YOUR_CERTIFICATE_ID", // Replace with actual Coursera certificate link
-        text: "Verify Certificate",
-        verificationId: "COURSERA-GIT-2022"
+        link: "/Git.pdf", // File in public folder
+        text: "View Certificate",
       },
       icon: (
         <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
@@ -227,14 +237,9 @@ const Achievement = () => {
                 
                 {/* Proof Section */}
                 <div className="flex items-center justify-between">
-                  <div className="text-xs text-gray-500">
-                    ID: {achievement.proof.verificationId}
-                  </div>
-                  <a
-                    href={achievement.proof.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center px-3 py-2 bg-gradient-to-r from-orange-500 to-amber-500 text-white text-sm font-medium rounded-lg hover:from-orange-600 hover:to-amber-600 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
+                  <button
+                    onClick={() => handleLinkClick(achievement.proof.link, achievement.proof.type)}
+                    className="inline-flex items-center px-3 py-2 bg-gradient-to-r from-orange-500 to-amber-500 text-white text-sm font-medium rounded-lg hover:from-orange-600 hover:to-amber-600 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg cursor-pointer"
                   >
                     <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       {achievement.proof.type === 'profile' ? (
@@ -246,7 +251,7 @@ const Achievement = () => {
                       )}
                     </svg>
                     {achievement.proof.text}
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>

@@ -1,6 +1,26 @@
 import React from "react";
 
 const About = () => {
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
+  const viewResume = () => {
+    try {
+      window.open('/Tribhuvan nath sagar.pdf', '_blank');
+    } catch (error) {
+      console.error('Error opening resume:', error);
+      // Fallback: try direct navigation
+      window.location.href = '/Tribhuvan nath sagar.pdf';
+    }
+  };
+
   return (
     <section
       id="about"
@@ -62,10 +82,16 @@ const About = () => {
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 mt-8">
-              <button className="px-8 py-3 bg-gradient-to-r from-orange-500 to-amber-500 text-white font-semibold rounded-lg shadow-lg hover:from-orange-600 hover:to-amber-600 transform hover:scale-105 transition-all duration-200">
-                Download Resume
+              <button 
+                onClick={viewResume}
+                className="px-8 py-3 bg-gradient-to-r from-orange-500 to-amber-500 text-white font-semibold rounded-lg shadow-lg hover:from-orange-600 hover:to-amber-600 transform hover:scale-105 transition-all duration-200 cursor-pointer"
+              >
+                View Resume
               </button>
-              <button className="px-8 py-3 border-2 border-orange-500 text-orange-600 font-semibold rounded-lg hover:bg-orange-500 hover:text-white transition-all duration-200">
+              <button 
+                onClick={() => scrollToSection('contact')}
+                className="px-8 py-3 border-2 border-orange-500 text-orange-600 font-semibold rounded-lg hover:bg-orange-500 hover:text-white transition-all duration-200 cursor-pointer"
+              >
                 Contact Me
               </button>
             </div>
