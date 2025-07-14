@@ -16,11 +16,11 @@ const App = () => {
           <Body />
         </section>
 
-        <section id="projects" className="min-h-screen w-full">
+        <section id="projects" className="w-full">
           <Project />
         </section>
 
-        <section id="achievement" className="min-h-screen w-full">
+        <section id="achievement" className="w-full">
           <Achievement />
         </section>
 

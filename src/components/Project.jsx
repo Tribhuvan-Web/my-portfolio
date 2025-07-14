@@ -64,39 +64,39 @@ const Project = () => {
   return (
     <section
       id="projects"
-      className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-orange-50 py-20"
+      className="py-20 bg-gradient-to-br from-gray-50 via-white to-orange-50"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-800 mb-4">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-800 mb-6">
             My{" "}
             <span className="bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">
               Projects
             </span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl lg:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Things I've built so far
           </p>
-          <div className="w-24 h-1 bg-gradient-to-r from-orange-500 to-amber-500 mx-auto rounded-full mt-4"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-orange-500 to-amber-500 mx-auto rounded-full mt-6"></div>
         </div>
 
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
           {projects.map((project) => (
             <div
               key={project.id}
-              className={`bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden border border-orange-100 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 ${
+              className={`bg-white rounded-2xl shadow-lg hover:shadow-xl overflow-hidden border border-gray-100 hover:border-orange-200 transition-all duration-300 transform hover:-translate-y-1 ${
                 project.featured ? "ring-2 ring-orange-200" : ""
               }`}
             >
               {/* Project Image */}
-              <div className="relative h-48 bg-gradient-to-br from-orange-100 to-amber-100 flex items-center justify-center">
+              <div className="relative h-56 lg:h-64 bg-gradient-to-br from-orange-100 to-amber-100 flex items-center justify-center overflow-hidden">
                 {project.image ? (
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                   />
                 ) : (
                   <div className="text-center">
@@ -107,28 +107,28 @@ const Project = () => {
                   </div>
                 )}
                 {project.featured && (
-                  <div className="absolute top-4 right-4 bg-gradient-to-r from-orange-500 to-amber-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                  <div className="absolute top-4 right-4 bg-gradient-to-r from-orange-500 to-amber-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg">
                     Featured
                   </div>
                 )}
               </div>
 
               {/* Project Content */}
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-800 mb-3">
+              <div className="p-6 lg:p-8">
+                <h3 className="text-xl lg:text-2xl font-bold text-gray-800 mb-4 leading-tight">
                   {project.title}
                 </h3>
-                <p className="text-gray-600 mb-4 leading-relaxed">
+                <p className="text-gray-600 lg:text-lg mb-6 leading-relaxed min-h-[4rem] lg:min-h-[5rem]">
                   {project.description}
                 </p>
 
                 {/* Technologies */}
-                <div className="mb-4">
-                  <div className="flex flex-wrap gap-2">
+                <div className="mb-6">
+                  <div className="flex flex-wrap gap-2 lg:gap-3">
                     {project.technologies.map((tech, index) => (
                       <span
                         key={index}
-                        className="px-3 py-1 bg-orange-100 text-orange-700 text-xs font-medium rounded-full"
+                        className="px-3 py-1.5 lg:px-4 lg:py-2 bg-orange-100 text-orange-700 text-xs lg:text-sm font-medium rounded-full border border-orange-200"
                       >
                         {tech}
                       </span>
@@ -137,12 +137,12 @@ const Project = () => {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex gap-3">
+                <div className="flex gap-4">
                   <a
                     href={project.liveLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 px-4 py-2 bg-gradient-to-r from-orange-500 to-amber-500 text-white font-semibold rounded-lg text-center hover:from-orange-600 hover:to-amber-600 transition-all duration-200 text-sm"
+                    className="flex-1 px-4 py-3 lg:px-6 lg:py-3 bg-gradient-to-r from-orange-500 to-amber-500 text-white font-semibold rounded-lg text-center hover:from-orange-600 hover:to-amber-600 transition-all duration-200 text-sm lg:text-base shadow-md hover:shadow-lg"
                   >
                     Live Demo
                   </a>
@@ -150,7 +150,7 @@ const Project = () => {
                     href={project.githubLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 px-4 py-2 border-2 border-orange-500 text-orange-600 font-semibold rounded-lg text-center hover:bg-orange-500 hover:text-white transition-all duration-200 text-sm"
+                    className="flex-1 px-4 py-3 lg:px-6 lg:py-3 border-2 border-orange-500 text-orange-600 font-semibold rounded-lg text-center hover:bg-orange-500 hover:text-white transition-all duration-200 text-sm lg:text-base"
                   >
                     GitHub
                   </a>

@@ -62,14 +62,12 @@ const Contact = () => {
       id="contact"
       className="relative bg-gradient-to-br from-gray-50 via-white to-orange-50 py-16 overflow-hidden"
     >
-      {/* Enhanced background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 right-0 w-96 h-96 bg-gradient-to-bl from-orange-200 to-amber-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float"></div>
         <div className="absolute bottom-1/4 left-0 w-80 h-80 bg-gradient-to-tr from-yellow-200 to-orange-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float animation-delay-1000"></div>
       </div>
 
       <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
-        {/* Enhanced Section Header */}
         <div className="text-center mb-12 sm:mb-16">
           <div className="inline-block">
             <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-4">
@@ -87,14 +85,12 @@ const Contact = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-start">
-          {/* Contact Form */}
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-4 sm:p-6 lg:p-8 border border-orange-100 w-full">
             <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-6">
               Send me a message
             </h3>
 
             <form ref={form} onSubmit={sendEmail} className="space-y-4 sm:space-y-6">
-              {/* Name Field */}
               <div>
                 <label
                   htmlFor="user_name"
@@ -114,7 +110,6 @@ const Contact = () => {
                 />
               </div>
 
-              {/* Email Field */}
               <div>
                 <label
                   htmlFor="user_email"
@@ -134,7 +129,6 @@ const Contact = () => {
                 />
               </div>
 
-              {/* Message Field */}
               <div>
                 <label
                   htmlFor="message"
@@ -154,7 +148,6 @@ const Contact = () => {
                 ></textarea>
               </div>
 
-              {/* Submit Button */}
               <button
                 type="submit"
                 disabled={isLoading}

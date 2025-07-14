@@ -3,16 +3,13 @@ import React from "react";
 const Achievement = () => {
   const handleLinkClick = (link, type) => {
     try {
-      if (type === 'profile') {
-        // External links (profiles)
-        window.open(link, '_blank', 'noopener,noreferrer');
+      if (type === "profile") {
+        window.open(link, "_blank", "noopener,noreferrer");
       } else {
-        // PDF files in public folder
-        window.open(link, '_blank');
+        window.open(link, "_blank");
       }
     } catch (error) {
-      console.error('Error opening link:', error);
-      // Fallback: try direct navigation
+      console.error("Error opening link:", error);
       window.location.href = link;
     }
   };
@@ -26,8 +23,8 @@ const Achievement = () => {
         "• Graduated with 69.5% Honours\n• Specialized in Software Development\n• Strong foundation in programming",
       year: "2025",
       proof: {
-        type: "document", // document, profile, certificate, screenshot
-        link: "/Final result.pdf", // File in public folder
+        type: "document",
+        link: "/Final result.pdf",
         text: "View Certificate",
       },
       icon: (
@@ -91,7 +88,7 @@ const Achievement = () => {
       year: "2025",
       proof: {
         type: "certificate",
-        link: "/certificates/spring-boot-certificate.pdf", // Replace with actual certificate path
+        link: "/certificates/spring-boot-certificate.pdf",
         text: "View Certificate",
       },
       icon: (
@@ -112,10 +109,10 @@ const Achievement = () => {
       title: "SQL Intermediate",
       description:
         "• HackerRank Certified\n• Advanced query optimization\n• Database design expertise",
-      year: "2024",
+      year: "2025",
       proof: {
         type: "certificate",
-        link: "/SQL.pdf", // File in public folder
+        link: "/SQL.pdf",
         text: "View Certificate",
       },
       icon: (
@@ -139,7 +136,7 @@ const Achievement = () => {
       year: "2022",
       proof: {
         type: "certificate",
-        link: "/Git.pdf", // File in public folder
+        link: "/Git.pdf",
         text: "View Certificate",
       },
       icon: (
@@ -180,7 +177,6 @@ const Achievement = () => {
           <div className="w-24 h-1 bg-gradient-to-r from-orange-500 to-amber-500 mx-auto rounded-full mt-4"></div>
         </div>
 
-        {/* Stats Section */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
           {stats.map((stat, index) => (
             <div
@@ -197,24 +193,23 @@ const Achievement = () => {
           ))}
         </div>
 
-        {/* Achievements Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {achievements.map((achievement) => (
             <div
               key={achievement.id}
               className={`${achievement.bgColor} rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 p-4 sm:p-6 border border-gray-100`}
             >
-              {/* Icon and category */}
               <div className="flex items-center justify-between mb-3 sm:mb-4">
-                <div className={`w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r ${achievement.color} rounded-lg flex items-center justify-center text-white shadow-md`}>
+                <div
+                  className={`w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r ${achievement.color} rounded-lg flex items-center justify-center text-white shadow-md`}
+                >
                   {achievement.icon}
                 </div>
                 <span className="text-xs sm:text-sm font-medium text-gray-500 bg-white/70 px-2 py-1 rounded-full">
                   {achievement.year}
                 </span>
               </div>
-              
-              {/* Content */}
+
               <div className="space-y-2 sm:space-y-3">
                 <div>
                   <h3 className="text-sm sm:text-base font-bold text-gray-800 leading-tight">
@@ -224,18 +219,22 @@ const Achievement = () => {
                     {achievement.category}
                   </p>
                 </div>
-                
+
                 <div className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                  {achievement.description.split('\n').map((line, index) => (
+                  {achievement.description.split("\n").map((line, index) => (
                     <div key={index} className="mb-1">
                       {line}
                     </div>
                   ))}
                 </div>
-                
-                {/* Proof button */}
+
                 <button
-                  onClick={() => handleLinkClick(achievement.proof.link, achievement.proof.type)}
+                  onClick={() =>
+                    handleLinkClick(
+                      achievement.proof.link,
+                      achievement.proof.type
+                    )
+                  }
                   className={`w-full mt-3 sm:mt-4 px-3 py-2 bg-gradient-to-r ${achievement.color} text-white text-xs sm:text-sm font-semibold rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-200 cursor-pointer`}
                 >
                   {achievement.proof.text}

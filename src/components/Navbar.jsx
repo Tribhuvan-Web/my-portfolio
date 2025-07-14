@@ -15,7 +15,7 @@ const Navbar = () => {
 
   const handleSmoothScroll = (e, href) => {
     e.preventDefault();
-    const targetId = href.substring(1); // Remove the '#' from href
+    const targetId = href.substring(1); 
     const targetElement = document.getElementById(targetId);
 
     if (targetElement) {
@@ -47,7 +47,6 @@ const Navbar = () => {
             </div>
           </a>
 
-          {/* Navigation List - Responsive for both Mobile and Desktop */}
           <div
             className={`${
               menuOpen
@@ -70,7 +69,6 @@ const Navbar = () => {
             </ul>
           </div>
 
-          {/* Menu Toggle Button */}
           <div className="sm:hidden">
             <button
               onClick={() => setMenuOpen(!menuOpen)}
