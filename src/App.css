@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+/* Font utility classes */
+.winky-rough {
+    font-family: "Winky Rough", sans-serif;
+}
+
+.raleway-dots-regular {
+    font-family: "Raleway Dots", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.edu-dots {
+    font-family: "Edu AU VIC WA NT Dots", sans-serif;
+}
+
+/* Custom animations */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fade-in 1s ease-out;
+}

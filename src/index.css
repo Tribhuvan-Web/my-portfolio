@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+/* Apply font to entire project */
+* {
+  font-family: "Winky Rough", sans-serif;
+}
+
+/* Alternative: You can also set it on body and html */
+body, html {
+  font-family: "Winky Rough", sans-serif;
+}
