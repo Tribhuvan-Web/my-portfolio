@@ -198,61 +198,48 @@ const Achievement = () => {
         </div>
 
         {/* Achievements Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {achievements.map((achievement) => (
             <div
               key={achievement.id}
-              className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden border border-orange-100 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+              className={`${achievement.bgColor} rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 p-4 sm:p-6 border border-gray-100`}
             >
-              {/* Achievement Header */}
-              <div
-                className={`${achievement.bgColor} p-6 relative overflow-hidden`}
-              >
-                <div className="flex items-center justify-between mb-4">
-                  <div
-                    className={`w-16 h-16 bg-gradient-to-r ${achievement.color} rounded-full flex items-center justify-center text-white shadow-lg`}
-                  >
-                    {achievement.icon}
-                  </div>
-                  <span className="text-sm font-semibold text-gray-600 bg-white px-3 py-1 rounded-full">
-                    {achievement.year}
-                  </span>
+              {/* Icon and category */}
+              <div className="flex items-center justify-between mb-3 sm:mb-4">
+                <div className={`w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r ${achievement.color} rounded-lg flex items-center justify-center text-white shadow-md`}>
+                  {achievement.icon}
                 </div>
-                <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16"></div>
+                <span className="text-xs sm:text-sm font-medium text-gray-500 bg-white/70 px-2 py-1 rounded-full">
+                  {achievement.year}
+                </span>
               </div>
-
-              {/* Achievement Content */}
-              <div className="p-6">
-                <div className="mb-3">
-                  <span className="inline-block px-3 py-1 bg-orange-100 text-orange-700 text-xs font-semibold rounded-full mb-2">
-                    {achievement.category}
-                  </span>
-                  <h3 className="text-xl font-bold text-gray-800 leading-tight">
+              
+              {/* Content */}
+              <div className="space-y-2 sm:space-y-3">
+                <div>
+                  <h3 className="text-sm sm:text-base font-bold text-gray-800 leading-tight">
                     {achievement.title}
                   </h3>
+                  <p className="text-xs text-gray-600 font-medium">
+                    {achievement.category}
+                  </p>
                 </div>
-                <p className="text-gray-600 leading-relaxed whitespace-pre-line text-sm mb-4">
-                  {achievement.description}
-                </p>
                 
-                {/* Proof Section */}
-                <div className="flex items-center justify-between">
-                  <button
-                    onClick={() => handleLinkClick(achievement.proof.link, achievement.proof.type)}
-                    className="inline-flex items-center px-3 py-2 bg-gradient-to-r from-orange-500 to-amber-500 text-white text-sm font-medium rounded-lg hover:from-orange-600 hover:to-amber-600 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg cursor-pointer"
-                  >
-                    <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      {achievement.proof.type === 'profile' ? (
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                      ) : achievement.proof.type === 'certificate' ? (
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-                      ) : (
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                      )}
-                    </svg>
-                    {achievement.proof.text}
-                  </button>
+                <div className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                  {achievement.description.split('\n').map((line, index) => (
+                    <div key={index} className="mb-1">
+                      {line}
+                    </div>
+                  ))}
                 </div>
+                
+                {/* Proof button */}
+                <button
+                  onClick={() => handleLinkClick(achievement.proof.link, achievement.proof.type)}
+                  className={`w-full mt-3 sm:mt-4 px-3 py-2 bg-gradient-to-r ${achievement.color} text-white text-xs sm:text-sm font-semibold rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-200 cursor-pointer`}
+                >
+                  {achievement.proof.text}
+                </button>
               </div>
             </div>
           ))}

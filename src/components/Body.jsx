@@ -1,5 +1,3 @@
-import React from "react";
-
 const Body = () => {
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -16,21 +14,21 @@ const Body = () => {
       id="home"
       className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 via-white to-orange-50 pt-16"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div className="max-w-7xl mx-auto px-4 lg:px-8 w-full">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
           {/* Text Content */}
           <div className="flex-1 text-center lg:text-left space-y-6">
             <div className="space-y-2">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-800 animate-fade-in">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-800 animate-fade-in">
                 Hi, 👋
               </h1>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-700">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-700">
                 My name is
               </h1>
-              <h1 className="text-3xl sm:text-4xl lg:text-7xl font-bold bg-gradient-to-r from-orange-500 via-amber-500 to-yellow-500 bg-clip-text text-transparent whitespace-nowrap">
+              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl xl:text-6xl font-bold bg-gradient-to-r from-orange-500 via-amber-500 to-yellow-500 bg-clip-text text-transparent break-words">
                 Tribhuvan Nath Sagar
               </h1>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-gray-700 mt-4">
+              <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold text-gray-700 mt-4">
                 <span className="bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent font-bold">
                   Java
                 </span>{" "}

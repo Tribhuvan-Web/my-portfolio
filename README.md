@@ -6,7 +6,7 @@ A modern, responsive portfolio website built with React and Tailwind CSS, showca
 
 ## 🚀 Live Demo
 
-🔗 **[View Live Portfolio](https://your-portfolio-url.netlify.app)** *(Replace with your actual deployment URL)*
+🔗 **[View Live Portfolio](https://my-portfolio-76.vercel.app/)** *(Replace with your actual deployment URL)*
 
 ## ✨ Features
 

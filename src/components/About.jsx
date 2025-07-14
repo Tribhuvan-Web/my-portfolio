@@ -61,10 +61,10 @@ const About = () => {
               <h4 className="text-xl font-semibold text-gray-800 mb-4">
                 Core Technologies
               </h4>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+              <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-2 sm:gap-3">
                 {[
                   "Java",
-                  "Spring Boot",
+                  "Spring Boot", 
                   "React",
                   "SQL",
                   "REST APIs",
@@ -72,9 +72,9 @@ const About = () => {
                 ].map((skill) => (
                   <div
                     key={skill}
-                    className="bg-white/80 backdrop-blur-sm border border-orange-200 rounded-lg px-4 py-2 text-center shadow-sm hover:shadow-md transition-shadow duration-200"
+                    className="bg-white/80 backdrop-blur-sm border border-orange-200 rounded-lg px-2 py-2 sm:px-4 text-center shadow-sm hover:shadow-md transition-shadow duration-200"
                   >
-                    <span className="text-gray-700 font-medium">{skill}</span>
+                    <span className="text-xs sm:text-sm text-gray-700 font-medium">{skill}</span>
                   </div>
                 ))}
               </div>
