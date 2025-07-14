@@ -65,9 +65,9 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className="fixed left-4 top-1/2 transform -translate-y-1/2 z-40 hidden lg:block">
-      <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-orange-100 p-2">
-        <div className="flex flex-col space-y-3">
+    <div className="fixed left-2 sm:left-4 top-1/2 transform -translate-y-1/2 z-40 hidden lg:block">
+      <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-orange-100 p-3">
+        <div className="flex flex-col space-y-4">
           {socialLinks.map((link, index) => (
             <a
               key={link.name}
@@ -80,11 +80,6 @@ const Sidebar = () => {
                 group relative w-12 h-12 flex items-center justify-center
                 bg-gray-100 text-gray-600 rounded-xl transition-all duration-300
                 hover:scale-110 hover:shadow-lg transform ${link.color} hover:text-white
-                before:absolute before:left-full before:ml-3 before:px-2 before:py-1
-                before:bg-gray-800 before:text-white before:text-xs before:rounded
-                before:opacity-0 before:pointer-events-none before:transition-opacity
-                before:duration-200 before:content-['${link.name}']
-                hover:before:opacity-100
               `}
               aria-label={link.name}
               style={{
@@ -94,7 +89,7 @@ const Sidebar = () => {
               {link.icon}
 
               {/* Tooltip */}
-              <span className="absolute left-full ml-3 px-2 py-1 bg-gray-800 text-white text-xs rounded opacity-0 pointer-events-none transition-opacity duration-200 group-hover:opacity-100 whitespace-nowrap">
+              <span className="absolute left-full ml-3 px-3 py-2 bg-gray-800 text-white text-xs rounded-lg opacity-0 pointer-events-none transition-opacity duration-200 group-hover:opacity-100 whitespace-nowrap shadow-lg z-50">
                 {link.name}
               </span>
             </a>

@@ -3,9 +3,95 @@
 /* Apply font to entire project */
 * {
   font-family: "Winky Rough", sans-serif;
+  box-sizing: border-box;
 }
 
 /* Alternative: You can also set it on body and html */
 body, html {
   font-family: "Winky Rough", sans-serif;
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Prevent any element from exceeding viewport width */
+.container, .max-w-7xl, .max-w-6xl, .max-w-5xl {
+  max-width: 100vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+/* iPad Pro Specific (1024px - 1366px) */
+@media (min-width: 1024px) and (max-width: 1366px) {
+  .max-w-7xl {
+    max-width: 95%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  
+  .max-w-6xl {
+    max-width: 95%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* 14-inch Laptop Specific (1366px - 1440px) */
+@media (min-width: 1366px) and (max-width: 1440px) {
+  .max-w-7xl {
+    max-width: 90%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  
+  .max-w-6xl {
+    max-width: 90%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Large Screens (1440px+) */
+@media (min-width: 1441px) {
+  .max-w-7xl {
+    max-width: 1280px;
+  }
+  
+  .max-w-6xl {
+    max-width: 1152px;
+  }
+}
+
+/* Fix for mobile screens */
+@media (max-width: 640px) {
+  .max-w-7xl, .max-w-6xl {
+    max-width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Fix text overflow issues */
+.break-words {
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Ensure images don't overflow */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
 }

@@ -11,8 +11,8 @@ const App = () => {
   return (
     <div className="bg-gradient-to-br from-orange-400 via-amber-400 to-yellow-300 min-h-screen w-full overflow-x-hidden">
       <Navbar />
-      <div className="w-full sm:px-4 lg:px-0">
-        <section id="home" className="min-h-screen w-full">
+      <div className="w-full">
+        <section id="home" className="w-full">
           <Body />
         </section>
 
@@ -24,15 +24,14 @@ const App = () => {
           <Achievement />
         </section>
 
-        <section id="about" className="min-h-screen w-full">
+        <section id="about" className="w-full">
           <About />
         </section>
         
-        <section id="contact" className="min-h-screen w-full">
+        <section id="contact" className="w-full">
           <Contact />
         </section>
         
-        <Sidebar />
         <Footer />
       </div>
     </div>
