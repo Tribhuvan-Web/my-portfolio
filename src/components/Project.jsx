@@ -26,8 +26,8 @@ const Project = () => {
         "PostgreSQL",
         "Payment Gateway",
       ],
-      liveLink: "https://your-live-demo.com",
-      githubLink: "https://github.com/yourusername/movie-booking",
+      liveLink: "https://cinebook.app",
+      githubLink: "https://github.com/Tribhuvan-Web/cinebook",
       featured: true,
     },
     {
